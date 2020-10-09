@@ -1,0 +1,45 @@
+#``1  Print the number of integers in an array that are above the given input and the number that are below, e.g. for the array [1, 5, 2, 1, 10] with input 6, print “above: 1, below: 4”.
+
+# assumptions: If an integer is the same as the input integer, we will not add it to the above or 
+# below count
+def print_count_of_numbers_above_or_below_threshold(numbers: list, threshold: int):
+  above, below = 0, 0
+
+  for number in numbers:
+    if number > threshold:
+      above += 1
+    elif number < threshold:
+      below += 1
+  print('above: ' + str(above) + ', below: ' + str(below))
+
+# calling our method
+print_count_of_numbers_above_or_below_threshold([1, 5, 2, 1, 10], 6)
+
+#2  Rotate the characters in a string by a given input and have the overflow appear at the beginning, e.g. “MyString” rotated by 2 is “ngMyStri”.
+
+# assumptions: I'm assuming we will return the string from the method and not print it.
+def rotate_characters_of_string_n_times(input:str, rotations:int) -> str:
+	input_length = len(input)
+	rotation_destination_index = rotations % input_length
+	
+	return input[rotation_destination_index:] + input [0: rotation_destination_index]
+	
+# calling our method
+rotate_characters_of_string_n_times('MyString', 2)
+
+#3  If you could change 1 thing about your favorite framework/language/platform (pick one), what would it be?
+For python, I would change the way it joins lists into strings. As of today, if you have an array of strings like the following: ['Hello', 'RTS', 'Labs']. The way we would join this into a string (with each element separated by a space) would be with the following code:
+
+words = ['Hello', 'RTS', 'Labs']
+' '.join(words)
+
+Instead of 'join' being a method of a string, I would make it a method of a list as follows:
+
+words = ['Hello', 'RTS', 'Labs']
+words.join(' ')
+
+Let us know if you have any questions! If you're good to go, please send us back your exercise at your convenience (please upload your response to a public git repository, such as Github).
+
+For question 1, I assumed that if the input number were to also be in the array, we would not add it to the above and below counts.
+
+For question 2, I'm assuming we will return the string from the method and not print it.
