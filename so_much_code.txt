@@ -22,7 +22,7 @@ def rotate_characters_of_string_n_times(input:str, rotations:int) -> str:
 	input_length = len(input)
 	rotation_destination_index = rotations % input_length
 	
-	return input[rotation_destination_index:] + input [0: rotation_destination_index]
+	return input[-rotation_destination_index:] + input [0: -rotation_destination_index]
 	
 # calling our method
 rotate_characters_of_string_n_times('MyString', 2)
